@@ -15,6 +15,9 @@ $containerBuilder = new ContainerBuilder();
 $parameters = require_once __DIR__ . '/config/DI/Parameters.php';
 $parameters($containerBuilder);
 
+$dependencies = require_once __DIR__ . '/config/DI/Dependencies.php';
+$dependencies($containerBuilder);
+
 $containerBuilder->useAnnotations(false);
 
 return $containerBuilder->build();
