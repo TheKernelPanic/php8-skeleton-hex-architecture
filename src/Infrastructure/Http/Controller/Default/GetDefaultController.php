@@ -17,8 +17,12 @@ class GetDefaultController extends BaseController implements HttpControllerInter
      */
     public function __invoke(ServerRequestInterface $request, ResponseInterface $response): ResponseInterface
     {
-        return $response->withStatus(
-            code: 204
+        return $this->render(
+            request: $request,
+            response: $response->withStatus(
+                code: 200
+            ),
+            template: 'default.html.twig'
         );
     }
 }
