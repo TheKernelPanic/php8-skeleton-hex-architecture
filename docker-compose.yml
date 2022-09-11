@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+  web_server:
+    image: onkernelpanic/docker-nginx-php8-fpm:2.1.2
+    container_name: php8_skeleton_hex_architecture_web_server
+    tty: true
+    volumes:
+      - '.:/var/www/work-directory'
+    ports:
+      - '80:80'
