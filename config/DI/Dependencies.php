@@ -8,6 +8,7 @@ use Monolog\Level;
 use Monolog\Logger;
 use Psr\Container\ContainerInterface;
 use Psr\Log\LoggerInterface;
+use Slim\Views\Twig;
 
 return static function(ContainerBuilder $containerBuilder): void {
 
@@ -37,6 +38,14 @@ return static function(ContainerBuilder $containerBuilder): void {
             );
 
             return $logger;
+        },
+        'view' => static function(ContainerInterface $container): Twig {
+            return Twig::create(
+                path: $container->get('parameters')['views']['templates_directory'],
+                settings: array(
+                    'cache' => $container->get('parameters')['views']['cache_directory']
+                )
+            );
         }
     );
 

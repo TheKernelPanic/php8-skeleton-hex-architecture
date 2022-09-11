@@ -14,6 +14,10 @@ return static function(ContainerBuilder $containerBuilder): void {
                     'filename' => $_ENV['LOGGER_FILE_NAME'],
                     'app_name' => $_ENV['LOGGER_APP_NAME'],
                     'permissions' => 0664
+                ),
+                'views' => array(
+                    'cache_directory' => $_ENV['TEMPLATE_CACHE_DIRECTORY'],
+                    'templates_directory' => __DIR__ . '/../../src/Infrastructure/Templates'
                 )
             )
         )
