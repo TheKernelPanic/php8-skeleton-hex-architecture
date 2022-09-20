@@ -1,0 +1,17 @@
+#!/bin/php
+<?php
+
+use Php8SkeletonHexArchitecture\Infrastructure\cli\DefaultCommand;
+use Symfony\Component\Console\Application;
+
+$container = require_once __DIR__ . '/../bootstrap.php';
+$application = new Application();
+
+$commands = array(
+    DefaultCommand::class
+);
+
+foreach ($commands as $command) {
+    $application->add(command: new $command(container: $container));
+}
+$application->run();

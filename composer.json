@@ -16,7 +16,8 @@
         "laminas/laminas-diactoros": "^2.17",
         "php-di/php-di": "^6.4",
         "monolog/monolog": "^3.2",
-        "slim/twig-view": "^3.3"
+        "slim/twig-view": "^3.3",
+        "symfony/console": "^6.1"
     },
     "autoload": {
         "psr-4": {
